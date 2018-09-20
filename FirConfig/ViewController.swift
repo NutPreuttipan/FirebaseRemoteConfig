@@ -7,14 +7,17 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var myButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        myButton.setTitle(RemoteControlValues.sharedInstance.text(forKey: .buttonText), for: .normal)
+        self.view.backgroundColor = RemoteControlValues.sharedInstance.color(forKey: .appPrimaryColor)
     }
-
-
 }
 
